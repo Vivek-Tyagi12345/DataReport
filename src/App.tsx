@@ -1,24 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
+import React, { useEffect, useState } from 'react';
+import './App.css';
+import wineData from './wineData';
+import StatTable from './util';
+import { calculateGamma } from './util';
 function App() {
+  const [flavanoidsData, setFlavanoidsData] = useState<any[]>([]); 
+  const [gammaData, setGammaData] = useState<any[]>([]); 
+
+  useEffect(() => {
+
+    const flavanoids : number[]= wineData.map((wine) => wine.Flavanoids);
+    setFlavanoidsData(flavanoids);
+
+ 
+    const gamma = wineData.map(calculateGamma);
+    setGammaData(gamma);
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <StatTable data={flavanoidsData} property="Flavanoids" />
+      <StatTable data={gammaData} property="Gamma" />
     </div>
   );
 }
