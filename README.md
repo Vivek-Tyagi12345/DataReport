@@ -5,9 +5,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Available Scripts
 
 In the project directory, you can run:
-####IMPOTANT   first of all run `yarn install`
+### IMPOTANT   first of all run `yarn install`
 ### `yarn start`
-
+### screenshot of APP
+![Imgur Image](https://postimg.cc/4n5s0FKj)
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
